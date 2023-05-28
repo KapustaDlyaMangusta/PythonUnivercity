@@ -1,3 +1,38 @@
+def print_iterable_length(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        try:
+            length = len(result)
+        except TypeError:
+            length = 1
+
+        print(f"Length of result of this function is {length}")
+        return result
+
+    return wrapper
+
+
+def log_lifetime(func):
+    def wrapper(*args, **kwargs):
+        print("Function params:")
+        print("args: ", args)
+        print("kwargs: ", kwargs)
+
+        print("Started...")
+
+        print("Getting results...")
+        result = func(*args, **kwargs)
+
+        print("Result:")
+        print("returned: ", result)
+
+        print("Ended...")
+
+        return result
+
+    return wrapper
+
+
 class BicycleManager:
     def __init__(self):
         """Initializing array"""
@@ -37,6 +72,7 @@ class BicycleManager:
         except StopIteration:
             raise Exception("There is no such bicycle")
 
+    @print_iterable_length
     def get_bicycles_max_distance(self):
         """Returns max distances of all bicycles"""
 
@@ -47,11 +83,13 @@ class BicycleManager:
 
         return enumerate(self.bicycles)
 
+    @log_lifetime
     def get_bicycles_zip_by_max_distance(self):
         """Returns zip of bicycles by max distance"""
 
         return zip(self.bicycles, self.get_bicycles_max_distance())
 
+    @log_lifetime
     def get_bicycles_attributes_by_type(self, data_type):
         """Returns list of tuples of bicycles attributes by given datatype"""
 

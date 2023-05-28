@@ -71,8 +71,12 @@ if __name__ == '__main__':
 
     bicycle_set_manager = BicycleSetManager(bicycle_manager)
 
-    for smth in bicycle_set_manager:
-        print(smth)
+    print("\nSet manager iteration: \n")
 
-    length = len(bicycle_set_manager)
-    print(length)
+    for bicycle_set_value in bicycle_set_manager:
+        print(bicycle_set_value)
+
+    print("\nSet manager length: \n")
+
+    print(len(bicycle_set_manager))
+
