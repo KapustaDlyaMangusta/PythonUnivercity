@@ -1,36 +1,5 @@
-def print_iterable_length(func):
-    def wrapper(*args, **kwargs):
-        result = func(*args, **kwargs)
-        try:
-            length = len(result)
-        except TypeError:
-            length = 1
-
-        print(f"Length of result of this function is {length}")
-        return result
-
-    return wrapper
-
-
-def log_lifetime(func):
-    def wrapper(*args, **kwargs):
-        print("Function params:")
-        print("args: ", args)
-        print("kwargs: ", kwargs)
-
-        print("Started...")
-
-        print("Getting results...")
-        result = func(*args, **kwargs)
-
-        print("Result:")
-        print("returned: ", result)
-
-        print("Ended...")
-
-        return result
-
-    return wrapper
+from decorators.log_lifetime import log_lifetime
+from decorators.print_iterable_length import print_iterable_length
 
 
 class BicycleManager:
