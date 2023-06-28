@@ -22,7 +22,3 @@ class AbstractBicycle(abc.ABC):
     @abc.abstractmethod
     def get_max_distance(self):
         """Absract method for getting max distance"""
-
-    @abc.abstractmethod
-    def man_what_are_u_doing(self):
-        pass

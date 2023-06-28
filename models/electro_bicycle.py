@@ -16,9 +16,6 @@ class ElectroBicycle(AbstractBicycle):
         """Returns distance due to capacity and charge per 100m"""
         return self.battery_capacity / self.charge_per_100m
 
-    def man_what_are_u_doing(self):
-        pass
-
     def __str__(self):
         """To string method overriding"""
         return f"Electro bicycle: \n\tCapacity: {self.battery_capacity} ,\n\tCharge per 100m: {self.charge_per_100m}" \

@@ -3,7 +3,7 @@
 import sys
 
 from decorators.logger import logger
-from exceptions.man_what_are_you_doing import ManWhatAreUDoingException
+from exceptions.cannot_get_max_distance import CannotGetMaxDistanceException
 from models.abstract_bicycle import AbstractBicycle
 
 
@@ -30,13 +30,13 @@ class Bicycle(AbstractBicycle):
         """Decreasing current speed by value, but not less than 0"""
         self.current_speed = self.current_speed - speed if self.current_speed - speed >= 0 else 0
 
+    @logger(CannotGetMaxDistanceException, "file")
     def get_max_distance(self):
         """Returning something default, because common bicycle is immortal"""
-        return sys.maxsize
+        if self.max_speed < 10:
+            raise CannotGetMaxDistanceException("You cannot get max distance of so slow bicycle")
 
-    @logger(ManWhatAreUDoingException, "file")
-    def man_what_are_u_doing(self):
-        raise ManWhatAreUDoingException("Man, what are u doing?")
+        return sys.maxsize
 
     def __str__(self):
         """To string method overriding"""

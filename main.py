@@ -11,7 +11,7 @@ if __name__ == '__main__':
     bicycle_list = [
         ElectroBicycle(40, 20, {"Mountain", "City"}, 12000, 100),
         ElectroBicycle(60, 50, {"Mountain", "City", "Sea"}, 15000, 80),
-        Bicycle(45, 30, {"Road", "Alaska"}, "Mountain", "Mercedes"),
+        Bicycle(9, 3, {"Road", "Alaska"}, "Mountain", "Mercedes"),
         Bicycle(50, 20, {"Mountain", "Ryasne"}, "Road", "Daewoo Matiz"),
         KidBicycle(12, 43, {"Volcano", "City"}, 5, 4),
         KidBicycle(30, 12, {"Volcano", "Buildings"}, 8, 3),
@@ -79,6 +79,3 @@ if __name__ == '__main__':
     print("\nSet manager length: \n")
 
     print(len(bicycle_set_manager))
-
-    for exception_bicycle_demonstrator in bicycle_manager.bicycles:
-        exception_bicycle_demonstrator.man_what_are_u_doing()

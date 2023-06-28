@@ -1,0 +1,2 @@
+class CannotGetMaxDistanceException(Exception):
+    pass
