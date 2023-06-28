@@ -14,6 +14,9 @@ class KidBicycle(AbstractBicycle):
         """Returns distance due to age"""
         return self.recommended_age % 3 * 10
 
+    def man_what_are_u_doing(self):
+        pass
+
     def __str__(self):
         """To string method overriding"""
         return f"Kid bicycle: \n\tRecommended age: {self.recommended_age} ,\n\tWheels count: {self.wheels_count}" \

@@ -13,6 +13,9 @@ class TandemBicycle(AbstractBicycle):
         """Return distance due to max passengers` weight"""
         return self.max_passengers_weight * 20
 
+    def man_what_are_u_doing(self):
+        pass
+
     def __str__(self):
         """To string method overriding"""
         return f"Tandem bicycle: \n\tMax passengers weight: {self.max_passengers_weight} ," \

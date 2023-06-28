@@ -1,0 +1,2 @@
+class ManWhatAreUDoingException(Exception):
+    pass

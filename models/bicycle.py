@@ -1,10 +1,17 @@
+"""Module for Bicycle class"""
+
 import sys
 
+from decorators.logger import logger
+from exceptions.man_what_are_you_doing import ManWhatAreUDoingException
 from models.abstract_bicycle import AbstractBicycle
 
 
 class Bicycle(AbstractBicycle):
-    def __init__(self,  max_speed: int, current_speed: int, possible_roads_set, brand: str, bicycle_type: str):
+    """Methods for class"""
+
+    def __init__(self,  max_speed: int, current_speed: int,
+                 possible_roads_set, brand: str, bicycle_type: str):
         """Calling parent constructor"""
         super().__init__(max_speed, current_speed, possible_roads_set)
 
@@ -26,6 +33,10 @@ class Bicycle(AbstractBicycle):
     def get_max_distance(self):
         """Returning something default, because common bicycle is immortal"""
         return sys.maxsize
+
+    @logger(ManWhatAreUDoingException, "file")
+    def man_what_are_u_doing(self):
+        raise ManWhatAreUDoingException("Man, what are u doing?")
 
     def __str__(self):
         """To string method overriding"""
